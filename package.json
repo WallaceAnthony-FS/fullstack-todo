@@ -1,0 +1,33 @@
+{
+  "name": "remindir",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "19.1.0"
+  },
+  "scripts": {
+    "start": "npm start --prefix api",
+    "dev:react": "concurrently --raw \"npm run api\" \"npm run react\"",
+    "react": "cd ui && npm run start",
+    "api": "cd api && nodemon server.js",
+    "install:react": "npm install --prefix ui",
+    "install:api": "npm install --prefix api",
+    "build:react": "npm run build --prefix ui",
+    "heroku-postbuild": "concurrently \"npm:install:*\"; concurrently \"npm:build:*\";"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WallaceAnthony-FS/fullstack-todo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WallaceAnthony-FS/fullstack-todo/issues"
+  },
+  "homepage": "https://github.com/WallaceAnthony-FS/fullstack-todo#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
