@@ -47,8 +47,11 @@ const TodoList = () => {
       <h3 className="text-sm font-medium text-red-800">{error.message}</h3>
     </p>
   } else if(isSuccess){
-    console.log(todos)
-    content = todos.map(todo => <TodoItem todo={todo} key={todo._id} />)
+    try {
+      content = todos.map(todo => <TodoItem todo={todo} key={todo._id} />)
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   return (
