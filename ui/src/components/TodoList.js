@@ -12,7 +12,7 @@ const TodoList = () => {
   })
   const queryClient = useQueryClient()
 
-  const { isLoading, isError, error, data: todos } = useQuery('todos', getTodos)
+  const { isLoading, isError, error, data: todos, isSuccess } = useQuery('todos', getTodos)
 
   const addTodoMutation = useMutation(addTodo, {
     onSuccess: () => {
@@ -46,7 +46,7 @@ const TodoList = () => {
       <XCircleIcon className="h-5 w-5 text-red-400" aria-hidden="true" />
       <h3 className="text-sm font-medium text-red-800">{error.message}</h3>
     </p>
-  } else {
+  } else if(isSuccess){
     content = todos.map(todo => <TodoItem todo={todo} key={todo._id} />)
   }
 
