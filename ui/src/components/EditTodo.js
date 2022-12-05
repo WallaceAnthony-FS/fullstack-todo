@@ -45,7 +45,7 @@ const EditTodo = () => {
   // }
 
   const handleDelete = () => {
-    deleteTodoMutation.mutate(todo._id)
+    deleteTodoMutation.mutate(id)
   }
 
   const handleChange = e => {

@@ -50,7 +50,6 @@ const TodoList = () => {
     try {
       content = todos.map(todo => <TodoItem todo={todo} key={todo._id} />)
     } catch (err) {
-      console.log(todos)
       console.error(err)
     }
   }
