@@ -24,7 +24,7 @@ app.use("/api/v1/todos", todoRouter)
 // Serve static bundle if route is not /api/*
 app.use(express.static(path.join(__dirname, '../reactjs/build')))
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../reactjs/build', 'index.html'))
+  res.sendFile(path.join(__dirname, '../ui/build', 'index.html'))
 })
 
 

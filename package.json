@@ -8,12 +8,12 @@
   },
   "scripts": {
     "start": "npm start --prefix api",
-    "dev": "concurrently --raw \"npm run api\" \"npm run react\"",
-    "react": "cd ui && npm run start",
+    "dev": "concurrently --raw \"npm run api\" \"npm run ui\"",
+    "ui": "cd ui && npm run start",
     "api": "cd api && npm run dev",
-    "install:react": "npm install --prefix ui",
+    "install:ui": "npm install --prefix ui",
     "install:api": "npm install --prefix api",
-    "build:react": "npm run build --prefix ui",
+    "build:ui": "npm run build --prefix ui",
     "heroku-postbuild": "concurrently \"npm:install:*\"; concurrently \"npm:build:*\";"
   },
   "repository": {
