@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "react-query";
-import { getTodos, getTodo, addTodo } from "../api/todosApi";
+import { getTodos, addTodo } from "../api/todosApi";
 import { useState } from "react"
 import { XCircleIcon, PlusIcon } from '@heroicons/react/20/solid'
 import TodoItem from "./TodoItem";
@@ -12,9 +12,7 @@ const TodoList = () => {
   })
   const queryClient = useQueryClient()
 
-  const { isLoading, isError, error, data: todos } = useQuery('todos', getTodos, {
-    select: todos => todos.sort((a, b) => b.priority - a.priority)
-  })
+  const { isLoading, isError, error, data: todos } = useQuery('todos', getTodos)
 
   const addTodoMutation = useMutation(addTodo, {
     onSuccess: () => {
