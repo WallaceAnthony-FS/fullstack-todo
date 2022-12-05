@@ -1,0 +1,28 @@
+
+GET http://localhost:8000/api/v1/todos
+
+###
+
+POST http://localhost:8000/api/v1/todos
+Content-Type: application/json
+
+{
+  "task": "Water the cat"
+}
+
+###
+
+GET http://localhost:8000/api/v1/todos/638d791de386e8324ba3f5a1
+
+###
+
+PATCH http://localhost:8000/api/v1/todos/638d791de386e8324ba3f5a1
+Content-Type: application/json
+
+{
+  "priority": 3
+}
+
+###
+
+DELETE http://localhost:8000/api/v1/todos/638d791de386e8324ba3f5a1
