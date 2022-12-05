@@ -17,7 +17,6 @@ const CRUD = (model, primaryKey = "_id") => {
   // Create
   router.post("/", async (req, res) => {
     try {
-      console.log(req.body)
       const instance = new model(req.body)
       await instance.save()
       return res.status(201).json(instance)
@@ -28,14 +27,12 @@ const CRUD = (model, primaryKey = "_id") => {
 
   // Retrieve
   router.get(`/:${primaryKey}`, getOne(model), async (req, res) => {
-    console.log(res.instance)
       return res.status(200).json(res.instance)
   })
 
   // Update
   router.patch(`/:${primaryKey}`, getOne(model), async (req, res) => {
     try {
-      console.log(res.instance)
       res.instance.set(req.body)
       await res.instance.save()
       return res.status(202).json(res.instance)

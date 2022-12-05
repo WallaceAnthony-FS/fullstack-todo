@@ -31,7 +31,7 @@ const TodoItem = ({todo}) => {
   return (
     <div className="flex items-center">
       <input className="h-4 w-4 mr-2 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" type="checkbox" checked={todo.completed} id={todo._id} onChange={handleComplete}/>
-      <Link to={`/todo/:${todo._id}`}>{todo.task}</Link>
+      <Link to={`/todo/${todo._id}`}>{todo.task}</Link>
       <button className="ml-4 text-sm font-medium text-red-800 justify-self-end" onClick={handleDelete}>Delete</button>
     </div>
   )
