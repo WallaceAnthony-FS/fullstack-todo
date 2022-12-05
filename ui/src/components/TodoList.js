@@ -13,7 +13,7 @@ const TodoList = () => {
   const queryClient = useQueryClient()
 
   const { isLoading, isError, error, data: todos } = useQuery('todos', getTodos, {
-    select: data => data.sort((a, b) => b.priority - a.priority)
+    select: todos => todos.sort((a, b) => b.priority - a.priority)
   })
 
   const addTodoMutation = useMutation(addTodo, {
