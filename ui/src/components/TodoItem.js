@@ -1,4 +1,4 @@
-import { useQuery, useMutation, useQueryClient } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import { updateTodo, deleteTodo } from "../api/todosApi";
 import { Link } from "react-router-dom"
 
